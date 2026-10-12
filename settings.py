@@ -12,3 +12,4 @@ class Settings:
         self.ship_file = self.image_path / 'ship2(no bg).png'
         self.ship_w = 40
         self.ship_h = 60
+        self.ship_speed = 15
