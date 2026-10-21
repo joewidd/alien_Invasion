@@ -24,7 +24,6 @@ class Alien(Sprite):
         self.x = float(self.rect.x)
 
     def update(self):
-        #updating the position of the ship
         temp_speed = self.settings.fleet_speed
 
         if self.check_edges():
