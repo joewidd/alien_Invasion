@@ -18,10 +18,15 @@ class Alien(Sprite):
         self.rect = self.image.get_rect()
         self.rect.x = x # type: ignore
         self.rect.y = y # type: ignore
-        # self.y = float(self.rect.y)
+
+        self.y = float(self.rect.y)
+        self.x = float(self.rect.x)
 
     def update(self):
-        pass
+        #updating the position of the ship
+        temp_speed = self.settings.fleet_speed
+        self.x += temp_speed
+        self.rect.x = self.x # type: ignore
 
     def draw_alien(self):
         self.screen.blit(self.image, self.rect)
