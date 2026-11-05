@@ -15,6 +15,7 @@ class Settings:
         self.ship_w = 40
         self.ship_h = 60
         self.ship_speed = 15
+        self.starting_ship_count = 3
 
         self.bullet_file = self.image_path / 'blueLaserBlast.png'
         self.laser_sound = self.sound_path / 'laser.mp3'
@@ -27,7 +28,7 @@ class Settings:
         self.alien_file = self.image_path / 'enemy_4.png'
         self.alien_w = 40
         self.alien_h = 40
-        self.fleet_speed = 10
+        self.fleet_speed = 7
         self.fleet_direction = 1
         self.fleet_drop_speed = 40
 
