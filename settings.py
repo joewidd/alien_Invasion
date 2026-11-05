@@ -43,6 +43,7 @@ class Settings:
         self.bullet_speed = 25
         self.bullet_amount = 5
 
+        self.alien_points = 50
         self.fleet_speed = 7
         self.fleet_drop_speed = 40
 
@@ -50,4 +51,5 @@ class Settings:
         self.ship_speed *= self.difficulty_scale
         self.bullet_speed *= self.difficulty_scale
         self.fleet_speed *= self.difficulty_scale
+
 
