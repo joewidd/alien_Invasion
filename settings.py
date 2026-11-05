@@ -4,6 +4,7 @@ class Settings:
     def __init__(self):
         self.image_path = Path.cwd() / 'Assets' / 'images'
         self.sound_path = Path.cwd() / 'Assets' / 'sound'
+        self.font_path = Path.cwd() / 'Assets' / 'fonts'
         self.name = 'Alien Invasion'
         self.screen_w = 1200
         self.screen_h = 800
@@ -17,6 +18,7 @@ class Settings:
 
         self.bullet_file = self.image_path / 'blueLaserBlast.png'
         self.laser_sound = self.sound_path / 'laser.mp3'
+        self.impact_sound = self.sound_path / 'impactSound.mp3'
         self.bullet_speed = 25
         self.bullet_w = 25
         self.bullet_h = 80
@@ -28,3 +30,12 @@ class Settings:
         self.fleet_speed = 10
         self.fleet_direction = 1
         self.fleet_drop_speed = 40
+
+        self.button_w = 200
+        self.button_h = 50
+        self.button_color = (0, 135, 50)
+
+        self.font_color = (255, 255, 255)
+        self.button_font_size = 48
+        self.HUD_font_size = 20
+        self.font_file = self.font_path / 'Megrim' / 'Megrim-Regular.ttf'
