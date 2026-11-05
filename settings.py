@@ -37,6 +37,6 @@ class Settings:
         self.button_color = (0, 135, 50)
 
         self.font_color = (255, 255, 255)
-        self.button_font_size = 48
+        self.button_font_size = 43
         self.HUD_font_size = 20
         self.font_file = self.font_path / 'Megrim' / 'Megrim-Regular.ttf'
