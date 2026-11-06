@@ -64,6 +64,7 @@ class AlienInvasion:
             # update game stats level
             self.game_stats.update_level()
             # update hud view
+            self.HUD.update_level()
 
         # check for bullets
         collisions = self.alien_fleet.check_collisions(self.ship.arsenal.arsenal)
@@ -91,6 +92,7 @@ class AlienInvasion:
         self.settings.initialize_dynamic_settings()
         self.game_stats.reset_stats()
         self.HUD.update_scores()
+        self.HUD.update_level()
         self._reset_level()
         self.ship._center_ship()
         self.game_active = True
