@@ -2,6 +2,7 @@ from pathlib import Path
 
 class Settings:
     def __init__(self):
+        self.score_path = Path.cwd() / 'Assets' / 'file'
         self.image_path = Path.cwd() / 'Assets' / 'images'
         self.sound_path = Path.cwd() / 'Assets' / 'sound'
         self.font_path = Path.cwd() / 'Assets' / 'fonts'
@@ -11,6 +12,7 @@ class Settings:
         self.FPS = 60
         self.bg_file = self.image_path / 'Starbasesnow.png'
         self.difficulty_scale = 1.1
+        self.scores_file = self.score_path / 'scores.json'
 
         self.ship_file = self.image_path / 'ship2(no bg).png'
         self.ship_w = 40
