@@ -10,19 +10,19 @@ class Settings:
         self.screen_w = 1200
         self.screen_h = 800
         self.FPS = 60
-        self.bg_file = self.image_path / 'Starbasesnow.png'
+        self.bg_file = self.image_path / 'pixel_space_background.png'
         self.difficulty_scale = 1.1
         self.scores_file = self.score_path / 'scores.json'
 
-        self.ship_file = self.image_path / 'ship2(no bg).png'
+        self.ship_file = self.image_path / 'new_ship.png'
         self.ship_w = 40
         self.ship_h = 60
 
         self.bullet_file = self.image_path / 'blueLaserBlast.png'
-        self.laser_sound = self.sound_path / 'laser.mp3'
+        self.laser_sound = self.sound_path / 'pewpew_1.wav'
         self.impact_sound = self.sound_path / 'impactSound.mp3'
 
-        self.alien_file = self.image_path / 'enemy_4.png'
+        self.alien_file = self.image_path / 'custom_alien_1.png'
         self.alien_w = 40
         self.alien_h = 40
         self.fleet_direction = 1
@@ -37,7 +37,7 @@ class Settings:
         self.font_file = self.font_path / 'Limelight' / 'Limelight-Regular.ttf'
 
     def initialize_dynamic_settings(self):
-        self.ship_speed = 15
+        self.ship_speed = 10
         self.starting_ship_count = 3
 
         self.bullet_w = 25
@@ -46,8 +46,8 @@ class Settings:
         self.bullet_amount = 5
 
         self.alien_points = 50
-        self.fleet_speed = 7
-        self.fleet_drop_speed = 40
+        self.fleet_speed = 1
+        self.fleet_drop_speed = 10
 
     def increase_difficulty(self):
         self.ship_speed *= self.difficulty_scale
