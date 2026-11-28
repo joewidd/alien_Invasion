@@ -59,12 +59,13 @@ class AlienInvasion:
             self._check_game_status()
 
         if self.alien_fleet.check_destroyed_status():
-            self._reset_level()
             self.settings.increase_difficulty()
             # update game stats level
             self.game_stats.update_level()
             # update hud view
             self.HUD.update_level()
+            # build the next fleet after the level number has advanced
+            self._reset_level()
 
         # check for bullets
         collisions = self.alien_fleet.check_collisions(self.ship.arsenal.arsenal)

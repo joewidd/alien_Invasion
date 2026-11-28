@@ -43,10 +43,16 @@ class AlienFleet:
     def create_cross_fleet(self, alien_w, alien_h, fleet_w, fleet_h, x_offset, y_offset):
         mid_col = fleet_w // 2
         mid_row = fleet_h // 2
+        half_thickness = 1        # 1 -> arms 3 aliens thick
+        arm_length = mid_row      # keep the cross square (as wide as it is tall)
         for row in range(fleet_h):
             for col in range(fleet_w):
-                on_vertical = col == mid_col and (row - mid_row) % 2 == 0
-                on_horizontal = row == mid_row and (col - mid_col) % 2 == 0
+                d_col = abs(col - mid_col)
+                d_row = abs(row - mid_row)
+                if d_col > arm_length or d_row > arm_length:
+                    continue
+                on_vertical = d_col <= half_thickness
+                on_horizontal = d_row <= half_thickness
                 if not (on_vertical or on_horizontal):
                     continue
                 current_x = alien_w * col + x_offset
