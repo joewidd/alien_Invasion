@@ -11,7 +11,9 @@ class Settings:
         self.screen_h = 800
         self.FPS = 60
         self.bg_file = self.image_path / 'pixel_space_background.png'
-        self.difficulty_scale = 1.1
+        # Aliens speed up faster each level than the ship does
+        self.difficulty_scale = 1.15
+        self.ship_difficulty_scale = 1.04
         self.scores_file = self.score_path / 'scores.json'
 
         self.ship_file = self.image_path / 'new_ship.png'
@@ -50,8 +52,8 @@ class Settings:
         self.fleet_drop_speed = 20
 
     def increase_difficulty(self):
-        self.ship_speed *= self.difficulty_scale
-        self.bullet_speed *= self.difficulty_scale
+        self.ship_speed *= self.ship_difficulty_scale
+        self.bullet_speed *= self.ship_difficulty_scale
         self.fleet_speed *= self.difficulty_scale
 
 
