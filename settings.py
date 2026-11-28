@@ -20,7 +20,7 @@ class Settings:
 
         self.bullet_file = self.image_path / 'blueLaserBlast.png'
         self.laser_sound = self.sound_path / 'pewpew_1.wav'
-        self.impact_sound = self.sound_path / 'impactSound.mp3'
+        self.impact_sound = self.sound_path / 'explosion.wav'
 
         self.alien_file = self.image_path / 'custom_alien_1.png'
         self.alien_w = 40
@@ -40,14 +40,14 @@ class Settings:
         self.ship_speed = 10
         self.starting_ship_count = 3
 
-        self.bullet_w = 25
-        self.bullet_h = 80
-        self.bullet_speed = 25
-        self.bullet_amount = 5
+        self.bullet_w = 10
+        self.bullet_h = 40
+        self.bullet_speed = 15
+        self.bullet_amount = 3
 
         self.alien_points = 50
-        self.fleet_speed = 1
-        self.fleet_drop_speed = 10
+        self.fleet_speed = 2
+        self.fleet_drop_speed = 20
 
     def increase_difficulty(self):
         self.ship_speed *= self.difficulty_scale
