@@ -25,7 +25,11 @@ class AlienFleet:
 
         fleet_w, fleet_h = self.calculate_fleet_size(alien_w, alien_h, screen_w, screen_h)
         x_offset, y_offset = self.calculate_offsets(alien_w, alien_h, screen_w, fleet_w, fleet_h)
-        self.create_rectangle_fleet(alien_w, alien_h, fleet_w, fleet_h, x_offset, y_offset)
+        level = self.game.game_stats.level
+        if level >= 3 and level % 2 == 1:   # e.g. cross on levels 3, 5, 7...
+            self.create_cross_fleet(alien_w, alien_h, fleet_w, fleet_h, x_offset, y_offset)
+        else:
+            self.create_rectangle_fleet(alien_w, alien_h, fleet_w, fleet_h, x_offset, y_offset)
 
     def create_rectangle_fleet(self, alien_w, alien_h, fleet_w, fleet_h, x_offset, y_offset):
         for row in range(fleet_h):
@@ -35,6 +39,20 @@ class AlienFleet:
                 if col % 2 == 0 or row % 2 == 0:
                     continue
                 self._create_alien(current_x, current_y)
+
+    def create_cross_fleet(self, alien_w, alien_h, fleet_w, fleet_h, x_offset, y_offset):
+        mid_col = fleet_w // 2
+        mid_row = fleet_h // 2
+        for row in range(fleet_h):
+            for col in range(fleet_w):
+                on_vertical = col == mid_col and (row - mid_row) % 2 == 0
+                on_horizontal = row == mid_row and (col - mid_col) % 2 == 0
+                if not (on_vertical or on_horizontal):
+                    continue
+                current_x = alien_w * col + x_offset
+                current_y = alien_h * row + y_offset
+                self._create_alien(current_x, current_y)
+
 
     def calculate_offsets(self, alien_w, alien_h, screen_w, fleet_w, fleet_h):
         half_screen = self.settings.screen_h//2
